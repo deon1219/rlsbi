@@ -16,12 +16,14 @@ First, using a randomly selected mask and perturbation parameters to generate a 
  - Brightness: In the YCrCb color space, we measure the relative brightness difference by calculating the disparity of values in the luminance channel (Y-channel) within the mask region.
  - Saturation: In the HSV color space, calculate the difference corresponding to the saturation channel (S-channel) within the mask region. 
  - For compression, translation, sharpen and affine transformation, we use the parameters as the differences directly.
- **B.** Threshold setting: By observing the differences between edited images and their corresponding real images under various quantified difference values, we set three kinds of threshold: imperceptible to the naked eye, slight, and obvious. Take color difference as an example: 
+ **B.** Threshold setting: By observing the differences between edited images and their corresponding real images under various quantified difference values, we set three kinds of threshold: imperceptible to the naked eye, slight, and obvious. Take color difference as an example:
+   
  | threshold | level | 
  |-----------|-------|
  |<5|imperceptible to the naked eye (it will be ignored during generating captions)|
  |5~10|slight|
  |>10|obvious|
+ 
 2) The construction of Caption Table:
  For different editing operations and editing scopes (full face vs. local), design corresponding rule-based texts by hands:
  - For color differences, preset texts include "There is a [#level] color inconsistency", "There is a [#level] unnatural skin tone", etc.
