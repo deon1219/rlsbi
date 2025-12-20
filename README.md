@@ -11,11 +11,13 @@ First, using a randomly selected mask and perturbation parameters to generate a 
 
 ## Details about the **Key Caption Table**
 （1) Quantify the differences between the real face image and the corresponding self blend image.
+
  **A.** We will record augmentation parameters when manipulating a real face image, including color, brightness, saturation, compression, translation, sharpen and affine transformation.
  - Color: we use the Euclidean distance to measure the color difference between pixels in LAB space. Specifically, we calculate the average pixel color difference in the mask region as a quantitative metric. 
  - Brightness: In the YCrCb color space, we measure the relative brightness difference by calculating the disparity of values in the luminance channel (Y-channel) within the mask region.
  - Saturation: In the HSV color space, calculate the difference corresponding to the saturation channel (S-channel) within the mask region. 
  - For compression, translation, sharpen and affine transformation, we use the parameters as the differences directly.
+   
  **B.** Threshold setting: By observing the differences between edited images and their corresponding real images under various quantified difference values, we set three kinds of threshold: imperceptible to the naked eye, slight, and obvious. Take color difference as an example:
    
    | threshold | level | 
@@ -30,6 +32,7 @@ First, using a randomly selected mask and perturbation parameters to generate a 
  - For brightness differences, preset texts include "Brightness is unnatural", "Lighting is inconsistent with the background", etc.
  - For images with sharpening operations: "There is a [#level] graininess", "There is a [#level] striping effect", etc.
  - ......
+   
 （3) We will select the matched caption according to the augment parameters.
 
 # 2. Framework
