@@ -10,7 +10,7 @@ This repository presents the experimental results and implementation for our pap
 First, using a randomly selected mask and perturbation parameters to generate a fake image. Then retrieve key captions from the lookup table based on the mask and parameters. Finally, feed the image pair and key captions into an MLLM to produce the corresponding CoT annotation.
 
 ## Details about the **Key Caption Table**
-（1) Quantify the differences between the real face image and the corresponding self blend image.
+（1） Quantify the differences between the real face image and the corresponding self blend image.
 
  **A.** We will record augmentation parameters when manipulating a real face image, including color, brightness, saturation, compression, translation, sharpen and affine transformation.
  - Color: we use the Euclidean distance to measure the color difference between pixels in LAB space. Specifically, we calculate the average pixel color difference in the mask region as a quantitative metric. 
@@ -26,14 +26,14 @@ First, using a randomly selected mask and perturbation parameters to generate a 
    |5~10|slight|
    |>10|obvious|
  
-（2) The construction of Caption Table:
+（2） The construction of Caption Table:
  For different editing operations and editing scopes (full face vs. local), design corresponding rule-based texts by hands:
  - For color differences, preset texts include "There is a [#level] color inconsistency", "There is a [#level] unnatural skin tone", etc.
  - For brightness differences, preset texts include "Brightness is unnatural", "Lighting is inconsistent with the background", etc.
  - For images with sharpening operations: "There is a [#level] graininess", "There is a [#level] striping effect", etc.
  - ......
    
-（3) We will select the matched caption according to the augment parameters.
+（3） We will select the matched caption according to the augment parameters.
 
 # 2. Framework
 
