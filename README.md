@@ -214,6 +214,17 @@ def get_probs_from_answer(self,
         return probs
 ```
 
+# Citation
+If you find this paper valuable for your work, please consider citing:
+```
+@article{jiangrlsbi,
+  title={Explainable Deepfake Detection with RL-Enhanced Self-Blended Images},
+  author={Ning Jiang, Dingheng Zeng, Yanhong Liu, Haiyang Yi, Shijie Yu, Minghe Weng, Haifeng Shen and Ying Li},
+  journal={ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year={2026},
+  organization={IEEE}
+}
+```
 
 
 [1] Y. Zhang, B. Colman, and X. Guo et al., “Common sense reasoning for deepfake detection” in ECCV,2024. https://github.com/Reality-Defender/Research-DD-VQA<br>
